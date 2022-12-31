@@ -19,7 +19,7 @@ function CountryCard ({flags, name, region, population, languages}){
                 }
             </td>
             <td>
-                <Link to={`/${name.common.replaceAll(' ', '')}`}>
+                <Link to={`/${name.common}`}>
                     <GrNext />
                 </Link>
             </td>
