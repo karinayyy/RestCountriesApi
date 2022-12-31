@@ -1,6 +1,5 @@
 import React from "react"
 import Navbar from "../Components/Navbar";
-import {GrNext} from "react-icons/gr";
 import {Link} from "react-router-dom";
 
 function HomePage() {
