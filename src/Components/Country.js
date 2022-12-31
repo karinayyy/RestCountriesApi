@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Avatar from 'react-avatar';
-import {GrNext, GrPrevious} from "react-icons/gr";
+import { GrPrevious} from "react-icons/gr";
 import { GoLocation } from "react-icons/go";
 
 function CountryFunc () {
