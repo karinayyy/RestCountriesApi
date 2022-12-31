@@ -2,20 +2,24 @@ import React, {useState, useEffect} from "react";
 import LoadingSpin from "react-loading-spin";
 import CountryCard from "./CountryCard";
 import Table from 'react-bootstrap/Table';
+import Pagination from "./Pagination";
+import axios from "axios";
 
 const url = "https://restcountries.com/v3.1/all"
 
 function CountriesFunc() {
     const [countries, setCountries] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [countriesPerPage, setCountriesPerPage] = useState(10);
+    const [countriesPerPage] = useState(10);
+
+    //change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     useEffect(() => {
         const getCountries = async () => {
             try{
-                const response = await fetch(url);
-                const data = await response.json();
-                setCountries(data);
+                const response = await axios.get(url);
+                setCountries(response.data);
             } catch (e) {
                 console.log(e);
             }
@@ -50,6 +54,7 @@ function CountriesFunc() {
                                 ))}
                                 </tbody>
                             </Table>
+                            <Pagination countriesPerPage={countriesPerPage} totalCountries={countries.length} paginate={paginate}/>
                         </>
                     )
 

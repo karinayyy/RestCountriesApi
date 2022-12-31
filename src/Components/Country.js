@@ -27,7 +27,7 @@ function CountryFunc () {
             {countryData.map((item) => (
                 <Card style={{ width: '18rem' }}>
                     <div className="flexbox-container">
-                        <Avatar name={item.name.common.charAt(0)} size="50" round={true} />
+                        <Avatar name={(item.name.common).charAt(0)} size="50" round={true} />
                             {item.name.common}
                     </div>
                     <Card.Body>
