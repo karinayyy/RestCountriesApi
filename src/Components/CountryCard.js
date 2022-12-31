@@ -7,7 +7,7 @@ function CountryCard ({flags, name, region, population, languages}){
     let languagesdata = Object.values(languages)
     return (
         <tr>
-            <td><img style={{ width: "20%" }}  src={flags.svg} alt="" /></td>
+            <td><img style={{ width: "10%" }}  src={flags.svg} alt="" /></td>
             <td>{name.common}</td>
             <td>{region}</td>
             <td>{population.toLocaleString()}</td>
