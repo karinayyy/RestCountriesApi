@@ -1,5 +1,4 @@
-import Navbar from "./Components/Navbar";
-import Countries from "./Components/Countries";
+
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Error from "./Components/Error";
 import CountriesPage from "./Pages/CountriesPage";

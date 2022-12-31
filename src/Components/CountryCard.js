@@ -2,8 +2,6 @@ import React from "react"
 import { GrNext } from "react-icons/gr";
 import {Link} from "react-router-dom";
 
-const urlInfo = "https://restcountries.com/v3.1/name/{name}";
-
 function CountryCard ({flags, name, region, population, languages}){
     let languagesdata = Object.values(languages)
     return (
