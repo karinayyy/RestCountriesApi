@@ -7,19 +7,26 @@ const url = "https://restcountries.com/v3.1/all"
 
 function CountriesFunc() {
     const [countries, setCountries] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [countriesPerPage, setCountriesPerPage] = useState(10);
 
     useEffect(() => {
         const getCountries = async () => {
             try{
                 const response = await fetch(url);
                 const data = await response.json();
-                setCountries(data.slice(0,10));
+                setCountries(data);
             } catch (e) {
                 console.log(e);
             }
         };
         getCountries();
     }, []);
+
+    // Get current country
+    const indexOfLastCountry = currentPage * countriesPerPage;
+    const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+    const currentCountry = countries.slice(indexOfFirstCountry, indexOfLastCountry);
 
     return(
         <>
@@ -38,7 +45,7 @@ function CountriesFunc() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {countries.map((country) => (
+                                {currentCountry.map((country) => (
                                     <CountryCard key={country.name.common} {...country} />
                                 ))}
                                 </tbody>

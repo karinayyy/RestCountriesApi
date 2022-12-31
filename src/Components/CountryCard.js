@@ -2,6 +2,7 @@ import React from "react"
 import { GrNext } from "react-icons/gr";
 import {Link} from "react-router-dom";
 
+
 function CountryCard ({flags, name, region, population, languages}){
     let languagesdata = Object.values(languages)
     return (
@@ -18,7 +19,7 @@ function CountryCard ({flags, name, region, population, languages}){
                 }
             </td>
             <td>
-                <Link to={`/${name.common}`}>
+                <Link to={`/${name.common.replaceAll(' ', '')}`}>
                     <GrNext />
                 </Link>
             </td>
