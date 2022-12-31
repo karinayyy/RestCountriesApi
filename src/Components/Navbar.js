@@ -24,7 +24,7 @@ function NavFunc() {
                             <SlMagnifier />
                         </Button>
                         <Form.Control
-                            placeholder="Search by country name"
+                            placeholder="It doesn`t work\\\"
                         />
                     </InputGroup>
                 </div>
